@@ -1,0 +1,86 @@
+﻿@model AgenciaDeViagens.Models.Cliente
+
+@{
+    ViewData["Title"] = "Novo Cliente";
+}
+
+<h1>Cadastro de Cliente</h1>
+
+<h4>Novo Cliente</h4>
+<hr />
+<div class="row bg-light">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label">Nome Completo<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataNasc" class="control-label">Data de Nascimento</label>
+                <input asp-for="DataNasc" class="form-control" />
+                <span asp-validation-for="DataNasc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RG" class="control-label"></label>
+                <input asp-for="RG" class="form-control" />
+                <span asp-validation-for="RG" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label">CPF<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="CPF" class="form-control" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Endereco" class="control-label">Endereço<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="Endereco" class="form-control" />
+                <span asp-validation-for="Endereco" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bairro" class="control-label">Bairro<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="Bairro" class="form-control" />
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>          
+            <div class="form-group">
+                <label asp-for="Cidade" class="control-label">Cidade<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="Cidade" class="form-control" />
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UF" class="control-label">UF<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="UF" class="form-control" />
+                <span asp-validation-for="UF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tel1" class="control-label">Telefone<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="Tel1" class="form-control" />
+                <span asp-validation-for="Tel1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tel2" class="control-label">Telefone 2</label>
+                <input asp-for="Tel2" class="form-control" />
+                <span asp-validation-for="Tel2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tel3" class="control-label">Telefone 3</label>
+                <input asp-for="Tel3" class="form-control" />
+                <span asp-validation-for="Tel3" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />  |
+                <a asp-action="Index"> Voltar para Lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

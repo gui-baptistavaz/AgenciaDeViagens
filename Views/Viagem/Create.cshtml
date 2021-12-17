@@ -1,0 +1,66 @@
+﻿@model AgenciaDeViagens.Models.Viagem
+
+@{
+    ViewData["Title"] = "Nova Viagem";
+}
+
+<h1>Cadastro de Viagem</h1>
+
+<h4>Nova Viagem</h4>
+<hr />
+<div class="row bg-light">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ClienteId" class="control-label">ClienteID<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="ClienteId" class="form-control" />
+                <span asp-validation-for="ClienteId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PartidaId" class="control-label">PartidaID<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="PartidaId" class="form-control" />
+                <span asp-validation-for="PartidaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ChegadaId" class="control-label">ChegadaID<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="ChegadaId" class="form-control" />
+                <span asp-validation-for="PartidaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmbarqueIda" class="control-label">Embarque(Ida)<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="EmbarqueIda" class="form-control" />
+                <span asp-validation-for="EmbarqueIda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesembarqueIda" class="control-label">Desembarque(Ida)<small class="text-danger"> *campo obrigatório</small></label>
+                <input asp-for="DesembarqueIda" class="form-control" />
+                <span asp-validation-for="DesembarqueIda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmbarqueVolta" class="control-label">Embarque(Volta)</label>
+                <input asp-for="EmbarqueVolta" class="form-control" />
+                <span asp-validation-for="EmbarqueVolta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesembarqueVolta" class="control-label">Desembarque(Volta)</label>
+                <input asp-for="DesembarqueVolta" class="form-control" />
+                <span asp-validation-for="DesembarqueVolta" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" /> | 
+                <a asp-action="Index"> Voltar para lista</a>
+            </div>
+        </form>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

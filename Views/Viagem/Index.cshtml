@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AgenciaDeViagens.Models.Viagem>
+
+@{
+    ViewData["Title"] = "Viagens";
+}
+
+<h1>Lista de Viagens</h1>
+
+<p>
+    <a asp-action="Create">+ Cadastrar nova Viagem</a>
+</p>
+<table class="table bg-light">
+    <thead>
+        <tr>            
+            <th>
+                @Html.DisplayNameFor(model => model.ClienteId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PartidaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChegadaId)
+            </th>
+            <th>
+                Embarque(Ida)
+            </th>
+            <th>
+                Desembarque(Ida)
+            </th>
+            <th>
+                Embarque(Volta)
+            </th>
+            <th>
+                Desembarque(Volta)
+            </th>
+           <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>           
+            <td>
+                @Html.DisplayFor(modelItem => item.ClienteId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartidaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChegadaId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmbarqueIda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesembarqueIda)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmbarqueVolta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DesembarqueVolta)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
